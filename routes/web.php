@@ -11,11 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-  return redirect('home');
-});
+Route::get('/', 'MainController@index');
 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::resource('ponentes', 'PonenteController');
+
+Route::resource('ponencias', 'PonenciaController');
+
+Route::resource('asistentes', 'AsistenteController');
